@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  output: 'export',
-  distDir: '../public',
+  // output: 'export',
+  // distDir: '../public',
   env: {
     name: 'Elgert',
     description: 'My Kasm supported workspaces.',
