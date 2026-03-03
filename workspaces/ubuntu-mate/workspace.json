@@ -2,37 +2,32 @@
   "friendly_name": "Ubuntu MATE",
   "image_src": "ubuntu-mate.png",
   "description": "Ubuntu with the MATE desktop environment.",
-  "name": "lscr.io/linuxserver/webtop:ubuntu-mate",
+  "docker_registry": "https://ghcr.io/",
+  "categories": ["Desktop"],
+  "architecture": ["amd64", "arm64"],
   "cores": 2,
   "memory": 2768,
   "gpu_count": 0,
   "cpu_allocation_method": "Inherit",
-  "docker_registry": "https://ghcr.io/",
-  "categories": [
-    "Desktop"
-  ],
-  "require_gpu": false,
-  "enabled": true,
-  "image_type": "Container",
   "run_config": {
-    "security_opt": [
-      "seccomp=unconfined"
-    ],
-    "entrypoint": [
-      "/kasminit"
-    ],
+    "security_opt": ["seccomp=unconfined"],
+    "entrypoint": ["/kasminit"],
     "user": 1000,
     "environment": {
       "HOME": "/home/kasm-user"
     }
   },
   "exec_config": {},
-  "architecture": [
-    "amd64",
-    "arm64"
-  ],
   "compatibility": [
-    "1.18.x"
-  ],
-  "uncompressed_size_mb": 2270
+    {
+      "version": "1.17.x",
+      "image": "lscr.io/linuxserver/webtop:ubuntu-mate",
+      "uncompressed_size_mb": 2270
+    },
+    {
+      "version": "1.18.x",
+      "image": "lscr.io/linuxserver/webtop:ubuntu-mate",
+      "uncompressed_size_mb": 2270
+    }
+  ]
 }
