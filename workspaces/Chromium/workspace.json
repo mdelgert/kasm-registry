@@ -1,17 +1,25 @@
 {
-  "description": "Chromium is a free and open-source browser, primarily developed and maintained by Google.",
-  "docker_registry": "https://index.docker.io/v1/",
+  "description": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+  "docker_registry": "https://ghcr.io/",
   "image_src": "chromium.png",
-  "name": "kasmweb/chromium:develop",
   "run_config": {
-    "hostname": "kasm"
+    "security_opt": [
+      "seccomp=unconfined"
+    ],
+    "entrypoint": [
+      "/kasminit"
+    ],
+    "user": 1000,
+    "environment": {
+      "HOME": "/home/kasm-user"
+    }
   },
   "exec_config": {
     "go": {
-      "cmd": "bash -c '/dockerstartup/custom_startup.sh --go --url \"$KASM_URL\"'"
+      "cmd": "bash -c 'HOME=/home/kasm-user wrapped-chromium \"$KASM_URL\"'"
     },
     "assign": {
-      "cmd": "bash -c '/dockerstartup/custom_startup.sh --assign --url \"$KASM_URL\"'"
+      "cmd": "bash -c 'HOME=/home/kasm-user wrapped-chromium \"$KASM_URL\"'"
     }
   },
   "categories": [
@@ -23,7 +31,20 @@
     "arm64"
   ],
   "compatibility": [
-    "1.18.x"
-  ],
-  "uncompressed_size_mb": 2170
+    {
+      "version": "1.16.x",
+      "image": "lscr.io/linuxserver/chromium:kasm",
+      "uncompressed_size_mb": 1250
+    },
+    {
+      "version": "1.17.x",
+      "image": "lscr.io/linuxserver/chromium:kasm",
+      "uncompressed_size_mb": 1250
+    },
+    {
+      "version": "1.18.x",
+      "image": "lscr.io/linuxserver/chromium:kasm",
+      "uncompressed_size_mb": 1250
+    }
+  ]
 }
