@@ -9,7 +9,9 @@
   "memory": 2768,
   "gpu_count": 0,
   "cpu_allocation_method": "Inherit",
+  "image_type": "Container",
   "run_config": {
+    "hostname": "kasm",
     "security_opt": ["seccomp=unconfined"],
     "entrypoint": ["/kasminit"],
     "user": 1000,
@@ -17,7 +19,6 @@
       "HOME": "/home/kasm-user"
     }
   },
-  "exec_config": {},
   "compatibility": [
     {
       "version": "1.17.x",
