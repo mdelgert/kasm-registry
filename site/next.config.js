@@ -8,7 +8,7 @@ const nextConfig = {
     description: 'My Kasm supported workspaces.',
     icon: 'https://mdelgert.github.io/kasm-registry/favicon.ico',
     listUrl: 'https://mdelgert.github.io/kasm-registry/',
-    contactUrl: 'https://kasmweb.com/support',
+    contactUrl: 'https://github.com/mdelgert/kasm-registry/issues',
   },
   reactStrictMode: true,
   basePath: '/kasm-registry/1.1',
