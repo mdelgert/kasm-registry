@@ -1,17 +1,17 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  // output: 'export',
-  // distDir: '../public',
+  output: 'export',
+  distDir: '../public',
   env: {
-    name: 'Elgert',
-    description: 'My Kasm supported workspaces.',
-    icon: 'https://mdelgert.github.io/kasm-registry/favicon.ico',
-    listUrl: 'https://mdelgert.github.io/kasm-registry/',
-    contactUrl: 'https://github.com/mdelgert/kasm-registry/issues',
+    name: 'Kasm Technologies',
+    description: 'The official store for Kasm supported workspaces.',
+    icon: '/img/logo.svg',
+    listUrl: 'https://registry.kasmweb.com/',
+    contactUrl: 'https://kasmweb.com/support',
   },
   reactStrictMode: true,
-  basePath: '/kasm-registry/1.1',
+  basePath: '/kasm-registry/1.0',
   trailingSlash: true,
   images: {
     unoptimized: true,
